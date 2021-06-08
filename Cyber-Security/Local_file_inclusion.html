@@ -52,7 +52,7 @@
 			</li>
 
 			<li class="nav-item">
-			<a class="nav-link" href="">Author</a>
+			<a class="nav-link" href="https://www.instagram.com/naga_sai_kumar_varikuti/">Author</a>
 
 			</li>
 		</ul>
@@ -95,33 +95,63 @@
 				</div>
 				<!-- End Top Menta -->
 
-				<h1 class="posttitle">How to write a UX case study</h1>
+				<h1 class="posttitle">LOCAL FILE INCLUSION</h1>
 
 			</div>
 
 			<!-- Begin Featured Image -->
-			<img class="featured-image img-fluid" src="https://cdn-images-1.medium.com/fit/t/1400/420/1*zhCt9Xj4dhRN6gxEf6A1dg.png" alt="logo">
+			<img class="featured-image img-fluid" src="/images/image.png" alt="logo" style="width:130rm">
 			<!-- End Featured Image -->
 
 			<!-- Begin Post Content -->
 			<div class="article-post">
 				<p>
-					Have you ever been told your UX portfolio lacks depth, or what you did is unclear, or that it doesn’t seem like you have enough experience, even though you know you do?Or maybe you landed an in-person interview, it didn’t go very well because you stumbled through presenting and answering questions about your projects. 
+					Alright lets get started<br></br>Local file inclusion(LFI) It is an most common vulnerability that can be seen in web applications, In this blog we can see how to find them and how to prevent them. 
 				</p>
         
 				<p>
-				After doing at least 100 hours of my own research through talking to UX candidates one-on-one, reviewing portfolios, and analyzing survey data, one thing became clear: UX professionals put too much emphasis on learning how to make deliverables, and not enough on articulating their design decisions. 
+          local file inclusion is a kind of vulnerability that exposes the files running on the web server so that LFI comes under information disclosure with the severity: High.<br></br> It's impacks can differ on what information they can access through LFI we can gather usernames of users on that particular webserver and harvest the passwords and harvest usefull inforamation from webserver logs and we can convert simple LFI into remote code execution by combining this vulnerability with some attacks vector such of upload vulneraility, log injection, or from The /proc/self/environ file  
 				</p>
+        <p><b>how to identify LFI?</b></p>
+        <p>
+          we can identify LFI through some online tools or basic penetration testing which takes alot of time and resources so i recomand using online tools like nessus
+        </p>
+        <p>The source code of application that is vulnerable to LFI may look like below 
+        </p>
+        <img src="/images/code.png" alt="#code">
+				<p>
+					 LFI vulnerability occures when an application uses the path to a file as input as shown above code. If the application treats that input as trusted a local file may be used in the included statement and the url to LFI may look like below
+				</p>
+        <p><b style="text-center">Eg: www.something.com/script.php?file=index.php</b></p>
+        <blockquote>
+					If you something like above in any website its worth a try, 
+				</blockquote>
+        
+
+        <p>
+          <b>Attacking LFI</b>
+        </p>
 
 				<p>
-					 When you can’t articulate your design decisions, it will make your day to day role harder, because you won’t know how to deal with pushback. And it will also limit your career options because your ability to write a strong case study is the foundation for creating a strong portfolio and doing well in interviews.
+					Any one can exploit by manipulating the file location parameter, we can put any file location which we want to read we can read /etc/passwd like as shown below<br></br>
+          <b>Eg: www.something.com/script.php?file=../../../../../etc/passwd</b><br></br>
+           if we can access /etc/passwd file we can gather uesrnames and start hydra password bruitforce or we can access all the server log file and gather usernames and password
 				</p>
-				<blockquote>
-					If you don’t have well-written UX case studies, then how can recruiters and hiring managers trust that you’ll be able to communicate what you did and why you did it if they hire you? 
-				</blockquote>
-				<p>
-					When approaching your UX portfolio and case studies, my advice is to think like a lawyer. Because how do lawyers win legal cases? With strong communication, and even stronger evidence. 
-				</p>
+
+        <p>
+          <b>Converting LFI to RCE</b><br></br>
+          we can convert LFI to rce using many techniques like php_expect_wrapper, The /proc/self/environ file, file upload form<br></br>
+          php expect wrapper:<br></br>php <b>expect://</b> allows us to execute system commands and we do that by placing <b>php?file=expect://ls</b>This will send post request to server to execute the ls command and it will list the files on the server. we can put a bash reverse shell in the the url and send the packet to server and the exectution of that command gives us reverse shell on the server
+        </p>
+
+        <p>
+          File upload Form:<br></br>if there is a file upload form we can upload php reverse shell or bash reverse shell and we can execute it using LFI and get a reverse shell
+        </p>
+
+        <p>
+          The /proc/self/environ file:<br></br>If we can intercept /proc/self/environ file we can made some change to it and make it execute the bash revershell. The changes are once we intersepted environ file we should should change the <b>User-Agent</b> to simple php command shell, once code is injected send the packet and refresh and then send the command like <b>php?file=/proc/self/environ&cmd=ls</b>this will cause the server to show the files on server we can send bash reverseshell command and get a shell on server
+        </p>
+
 			</div>
 			<!-- End Post Content -->
 

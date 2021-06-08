@@ -140,39 +140,63 @@
   <h3 class="w3-center" style="color:black">Reads</h3>
 
 		<div class="w3-container w3-onethird w3-card w3-white w3-round w3-margin collapsible"><br>
+
     <a href="articles/article1.html">
-      <img src="https://cdn.mos.cms.futurecdn.net/SXcnAfjwbEedZf78rfis4A-970-80.jpg" class="w3-left w3-margin-right" style="width:100px">
-      <p>All you need to know about the Mars helicopter</p><br></div>
+
+      <img src="images/image.png" class="w3-left w3-margin-right" style="width:100px">
+
+      <p>Every thing about LFI(local file inclusion), What is LFI and how to prevent it and how to identify</p><br>
+
+      </div>
+
       <div class="content">
+
         <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
     </a>
         
 </div>
+
 		<div class="w3-container w3-onethird w3-card w3-white w3-round w3-margin collapsible"><br>
+
         <img src="https://cdn.mos.cms.futurecdn.net/SXcnAfjwbEedZf78rfis4A-970-80.jpg" class="w3-left w3-margin-right" style="width:100px">
-        <p>All you need to know about the Mars helicopter</p><br>
+
+        <p>Adding very soon</p><br>
+
     </div>
 		
     <div class="content">
+  
   <p style="color:black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
 </div>
+
 		<div class="w3-container w3-onethird w3-card w3-white w3-round w3-margin collapsible"><br>
         <img src="https://cdn.mos.cms.futurecdn.net/SXcnAfjwbEedZf78rfis4A-970-80.jpg" class="w3-left w3-margin-right" style="width:100px">
         
-        <p>All you need to know about the Mars helicopter</p><br>
+        <p>Adding very soon</p><br>
+    
     </div>
+
 		<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+  commodo consequat.</p>
+
 </div>
 
 
 		<div class="w3-container w3-onethird w3-card w3-white w3-round w3-margin collapsible"><br>
+        
         <img src="https://cdn.mos.cms.futurecdn.net/hbw9aoC9bc6PVrL9dmF8jY-610-80.jpeg.webp" class="w3-left w3-margin-right" style="width:100px">
         
-        <p>What threat could Climate change pose for humans?</p><br>
+        <p>Adding very soon</p><br>
     </div>
+
 		<div class="content">
+  
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
 </div>
 
 	<!--<div class="w3-row-padding">
