@@ -15,7 +15,7 @@
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-<link href="/articles/style.css" rel="stylesheet">
+<link href="/Cyber-Security/style.css" rel="stylesheet">
 
 </head>
 
@@ -48,7 +48,7 @@
 			</li>
 			<li class="nav-item">
 
-			<a class="nav-link" href="">Cyber Security</a>
+			<a class="nav-link" href="/Cyber-Security/all-articles.html">Cyber Security</a>
 			</li>
 
 			<li class="nav-item">
@@ -90,7 +90,7 @@
 					<div class="col-md-10">
 						
 						
-						<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+						<span class="post-date">9th jun 2021</span><span class="dot"></span><span class="post-read">5 min read</span>
 					</div>
 				</div>
 				<!-- End Top Menta -->
@@ -110,21 +110,21 @@
 				</p>
         
 				<p>
-          local file inclusion is a kind of vulnerability that exposes the files running on the web server so that LFI comes under information disclosure with the severity: High.<br></br> It's impacks can differ on what information they can access through LFI we can gather usernames of users on that particular webserver and harvest the passwords and harvest usefull inforamation from webserver logs and we can convert simple LFI into remote code execution by combining this vulnerability with some attacks vector such of upload vulneraility, log injection, or from The /proc/self/environ file  
+          local file inclusion is a kind of vulnerability that exposes the files running on the web server so that LFI comes under information disclosure with the severity: High.<br></br> It's impacks can differ on what information they can access through LFI we can gather usernames of users on that particular webserver and harvest the passwords and harvest usefull information from webserver logs and we can convert simple LFI into remote code execution by combining this vulnerability with some attacks vector such of upload vulneraility, log injection, or from The /proc/self/environ file  
 				</p>
         <p><b>how to identify LFI?</b></p>
         <p>
-          we can identify LFI through some online tools or basic penetration testing which takes alot of time and resources so i recomand using online tools like nessus
+          we can identify LFI through some online tools or basic penetration testing which takes alot of time and resources so i recommend using online tools like nessus
         </p>
         <p>The source code of application that is vulnerable to LFI may look like below 
         </p>
         <img src="/images/code.png" alt="#code">
 				<p>
-					 LFI vulnerability occures when an application uses the path to a file as input as shown above code. If the application treats that input as trusted a local file may be used in the included statement and the url to LFI may look like below
+					 LFI vulnerability occures when an application uses the path to a file as input as shown above code. If the application treats that input as trusted a local file may be used in the included statement and that makes LFI vulnerability possible the url to LFI may look like below
 				</p>
         <p><b style="text-center">Eg: www.something.com/script.php?file=index.php</b></p>
         <blockquote>
-					If you something like above in any website its worth a try, 
+					If you see something like above in any website url its worth a try, 
 				</blockquote>
         
 
@@ -133,14 +133,14 @@
         </p>
 
 				<p>
-					Any one can exploit by manipulating the file location parameter, we can put any file location which we want to read we can read /etc/passwd like as shown below<br></br>
+					Any one can exploit LFI by manipulating the file location parameter, we can put any file location which we want to read we can read /etc/passwd like as shown below<br></br>
           <b>Eg: www.something.com/script.php?file=../../../../../etc/passwd</b><br></br>
            if we can access /etc/passwd file we can gather uesrnames and start hydra password bruitforce or we can access all the server log file and gather usernames and password
 				</p>
 
         <p>
           <b>Converting LFI to RCE</b><br></br>
-          we can convert LFI to rce using many techniques like php_expect_wrapper, The /proc/self/environ file, file upload form<br></br>
+          we can convert LFI to rce using many techniques like php-expect-wrapper, The /proc/self/environ file, file upload form<br></br>
           php expect wrapper:<br></br>php <b>expect://</b> allows us to execute system commands and we do that by placing <b>php?file=expect://ls</b>This will send post request to server to execute the ls command and it will list the files on the server. we can put a bash reverse shell in the the url and send the packet to server and the exectution of that command gives us reverse shell on the server
         </p>
 
@@ -150,6 +150,14 @@
 
         <p>
           The /proc/self/environ file:<br></br>If we can intercept /proc/self/environ file we can made some change to it and make it execute the bash revershell. The changes are once we intersepted environ file we should should change the <b>User-Agent</b> to simple php command shell, once code is injected send the packet and refresh and then send the command like <b>php?file=/proc/self/environ&cmd=ls</b>this will cause the server to show the files on server we can send bash reverseshell command and get a shell on server
+        </p>
+
+        <p>
+          <b>Preventing LFI:</b><br></br> As we can see above LFI can cause serious damage to organisations so, preventing it to happen is very important we can prevent LFI by not using the local file as parameter on web application instead we can copy the that file and put it in webserver<br></br><b>Preventing File Upload Vulnerability:</b><br></br>we can prevent file upload vulnerability by placing a scripty that filters the uploaded files or making uploaded files not executable on the webserver
+        </p>
+
+        <p>
+          <b>The /proc/self/environ:</b><br></br>we can prevent this vulnerability by changing read and write permissions to only root.
         </p>
 
 			</div>
@@ -184,7 +192,7 @@
 <div class="container">
 	<div class="footer">
 		<p class="pull-left">
-			 record number, month and date
+			9th jun 2021
 		</p>
 		
 		</p>
