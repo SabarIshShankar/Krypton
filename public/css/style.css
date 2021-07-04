@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+p {
+  margin: 10px 0 !important;
+}
+
+.login-container {
+  width: 350px;
+  text-align: center;
+	font-family: DM Sans;
+	border-radius: 20px;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.img-small {
+  width: 180px;
+}
+p, h1, h2, h3, h4{
+	font-family: DM Sans;
+}
