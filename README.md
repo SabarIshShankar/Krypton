@@ -1,2 +1,0 @@
-# Krypton
-Blog website
