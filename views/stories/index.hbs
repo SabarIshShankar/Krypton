@@ -1,3 +1,4 @@
+<title>Spacesurf</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -8,10 +9,13 @@
 	.chip{
 		background-color: #ffffff;
 	}
-	p,h1, h2, h3, h4, h5, a{
+	p,h1, h2, h3, h4, h5, h6, a{
 		font-family: Montserrat;
 
 	}
+  .pa{
+    color: #ee00ff;
+  }
 	.card-image{
 		box-shadow: 0;
 	}
@@ -56,11 +60,11 @@
     <div class="col s12">
         <div class="card w3-bg">
             <div class="card-content left-align w3-text-white">
-				<a href="/stories/user/{{user._id}}"><h4>{{user.displayName}}</h4></a>
+				<a href="/stories/user/{{user._id}}"><h6>{{user.displayName}}</h6></a>
                 <a href="/stories/{{_id}}"><h5>{{title}}</h5></a>
-                <p>{{stripTags (truncate body 150)}}</p>
+                <p class="pa">{{stripTags (truncate body 150)}}</p>
 
-                <div class="date w3-padding-16">
+                <div class="date">
                 <p>{{formatDate createdAt 'DD MM YY, h:mm a'}}</p>
                 </div>
             </div>

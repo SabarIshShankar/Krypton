@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 p {
   margin: 10px 0 !important;
 }
@@ -6,7 +6,7 @@ p {
 .login-container {
   width: 350px;
   text-align: center;
-	font-family: DM Sans;
+	font-family: Montserrat;
 	border-radius: 20px;
 }
 
@@ -23,5 +23,5 @@ p {
   width: 180px;
 }
 p, h1, h2, h3, h4{
-	font-family: DM Sans;
+	font-family: Montserrat;
 }
