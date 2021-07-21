@@ -51,7 +51,7 @@
 
 </style>
 
-<a class="w3-left btn-grad">Create Post</a><a class="w3-right btn-grad">Logout</a>
+<a class="w3-left btn-grad" href="/stories/add">Create Post</a><a class="w3-right btn-grad" href="/auth/logout">Logout</a>
 
 
 <div class="row">
@@ -61,7 +61,7 @@
             <div class="card-content left-align w3-text-white">
 				<a href="/stories/user/{{user._id}}"><h6>{{user.displayName}}</h6></a>
                 <a href="/stories/{{_id}}"><h5>{{title}}</h5></a>
-                <p class="pa">{{stripTags (truncate body 150)}}</p>
+                <p class="pa">{{stripTags (truncate body 60)}}</p>
 
                 <div class="date">
                 <p>{{formatDate createdAt 'DD MM YY, h:mm a'}}</p>
