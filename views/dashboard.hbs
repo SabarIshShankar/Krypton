@@ -1,9 +1,6 @@
 <title>Spacesurf</title>
 
-<a class="w3-left btn-grad" href="/stories">Feed</a>
-<a class="w3-left btn-grad" href="/stories/add">Create Post</a>
-<a class="w3-right btn-grad" href="/dashboard">Profile</a>
-<a class="w3-right btn-grad" href="/auth/logout">Logout</a>
+
 
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,14 +9,23 @@ td, tr{
         font-size: 15px;
     }
     a{
-        color: #642DFF;
+        color: white;
+        weight: bold;
     }
 		w3-button{
 			color: green;
 
 		}
+    body{
+      background-color: black;
+      color: white;
+    }
 
 </style>
+<a class="w3-left btn-grad" href="/stories">Feed</a>
+<a class="w3-left btn-grad" href="/stories/add">Create Post</a>
+<a class="w3-right btn-grad" href="/auth/logout">Logout</a>
+
 <h4 class="w3-padding-top">Welcome {{name}}</h4>
 <p>Here are your posts</p>
 {{#if stories}}

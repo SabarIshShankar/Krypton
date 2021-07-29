@@ -1,7 +1,6 @@
 <title>Spacesurf</title>
 
 <a class="w3-left btn-grad" href="/stories">Feed</a>
-<a class="w3-left btn-grad" href="/stories/add">Create Post</a>
 <a class="w3-right btn-grad" href="/dashboard">Profile</a>
 <a class="w3-right btn-grad" href="/auth/logout">Logout</a>
 
@@ -17,9 +16,9 @@
   color: white;
 }
     .w3-bg{
-        background-color: #1d1d1d;
+        background-color: black;
         border: 0.6px solid rgb(75, 75, 75);
-        border-radius: 10px;
+        border-radius: 0px;
     }
     .date{
       font-size:8px;
@@ -28,12 +27,11 @@
 <body class="black">
 <div class="row black">
     <div class="col s12 m8">
-        <h6>{{story.title}}
+        <h4>{{story.title}}
             <small>{{{editIcon story.user user story._id false}}}</small>
-        </h6>
+        </h4>
         <div class="card story black w3-bg">
             <div class="card-content">
-                <span class="card-title date">{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span>
                 {{{story.body}}}
             </div>
         </div>
@@ -42,11 +40,10 @@
         <div class="card center-align w3-bg">
             <div class="card-content">
                 <span class="card-title">{{story.user.displayName}}</span>
-                <img src="{{story.user.image}}" class="circle responsive-img img-small">
+                <a href="/stories/user/{{story.user._id}}">Read more from {{story.user.firstName}}</a>
+
             </div>
-            <div class="card-action w3-bg">
-                <a href="/stories/user/{{story.user._id}}">More From {{story.user.firstName}}</a>
-            </div>
+
         </div>
     </div>
 </div>

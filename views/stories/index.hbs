@@ -20,25 +20,34 @@
 		box-shadow: 0;
 	}
     body{
-        background-color: rgb(14, 14, 14);
+        background-color: black;
     }
     .w3-bg{
         background-color: #1d1d1d;
-        border: 0.6px solid rgb(75, 75, 75);
-        border-radius: 10px;
+        border-radius: 6px;
     }
 .links{
     color:#ea00ff;
+}
+.w3-content{
+  padding: 13px;
+}
+
+.card{
+  margin-bottom: 5px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
           
          .btn-grad {background-image: linear-gradient(to right, #c300ff 0%, #ff00d4  51%, #8c00ff  100%)}
          .btn-grad {
             margin: 10px;
+            padding: 8px;
             text-align: center;
             transition: 0.5s;
             background-size: 200% auto;
             color: white;            
-            border-radius: 10px;
+            border-radius: 5px;
             display: block;
           }
 
@@ -62,7 +71,7 @@
     {{#each stories}}
     <div class="col s12">
         <div class="card w3-bg">
-            <div class="card-content left-align w3-text-white">
+            <div class="w3-content left-align w3-text-white">
 				<a href="/stories/user/{{user._id}}"><h6>{{user.displayName}}</h6></a>
                 <a href="/stories/{{_id}}"><h5>{{title}}</h5></a>
                 <p class="pa">{{stripTags (truncate body 60)}}</p>
