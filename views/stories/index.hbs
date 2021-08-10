@@ -1,5 +1,7 @@
 <title>Spacesurf</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link
+ href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 	.date{
@@ -32,7 +34,9 @@
 .w3-content{
   padding: 13px;
 }
-
+.heading{
+  font-family: Playfair Display;
+}
 .card{
   margin-bottom: 5px;
   margin-right: 0px;
@@ -57,10 +61,10 @@
             text-decoration: none;
           }
 
-          .btn-grad1 {background-image: linear-gradient(to right, #c300ff 0%, #ff00d4  51%, #8c00ff  100%)}
+          .btn-grad1 {background-image: linear-gradient(to right, #e800ff 0%, #6c00ff 51%, #e800ff 100%)}
          .btn-grad1 {
             margin: 10px;
-            width: 250px;
+            width: 200px;
             padding: 8px;
             text-align: center;
             transition: 0.5s;
@@ -79,6 +83,33 @@
           .w3-center{
             border: none;
           }
+          .btn-grad2 {
+		background-image: linear-gradient(to right, #7200b7 0%, #220050 51%, #7200b7 100%)
+	}
+
+	.btn-grad2 {
+
+
+		text-align: center;
+		transition: 0.5s;
+		background-size: 200% auto;
+		color: white;
+		margin: 4px 2px;
+		border-radius: 5px;
+    font-size: 8px;
+
+	}
+  .date{
+		font-size: 10px;
+		color: rgb(212, 212, 212);
+	}
+
+	.btn-grad2:hover {
+		background-position: right center;
+		/* change the direction of the change here */
+		color: #fff;
+		text-decoration: none;
+	}
 
 </style>
 
@@ -99,17 +130,28 @@
 
 <div class="row" id="articles">
     {{#each stories}}
-    <div class="col s12">
+    <div class="col s12 ">
         <div class="card w3-bg " data-aos="fade-up">
             <div class="w3-content left-align w3-text-white">
 				
-                <a href="/stories/{{_id}}"><h5 class="maint">{{title}}</h5></a>
+                <a href="/stories/{{_id}}"><h5 class="heading">{{title}}</h5></a>
                 <p class="pa">{{stripTags (truncate body 60)}}</p>
 
                 <div class="date w3-row">
-                <p>{{formatDate createdAt 'DD MM YY'}}</p>
-                <a href="/stories/user/{{user._id}}"><p>{{user.displayName}}</p></a>
+                
+                <a href="/stories/user/{{user._id}}">
+                <p>{{user.displayName}} ({{formatDate createdAt 'DD MM YY'}})</p>
+                
+                </a>
+
+                
+                <a href="/stories/{{_id}}" class="date w3-padding-16">
+                <button class="btn-grad2 w3-center w3-padding">Read more</button>
+                </a>
+
+                
                 </div>
+                
             </div>
         </div>
     </div>
